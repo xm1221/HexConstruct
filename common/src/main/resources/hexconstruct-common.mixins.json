@@ -6,7 +6,9 @@
   "client": [
   ],
   "mixins": [
+    "MixinDatagenMain"
   ],
+  "plugin": "cn.xm1221.HexConstruct.mixin.HexConstructMixinConfigPlugin",
   "injectors": {
     "defaultRequire": 1
   }

@@ -1,0 +1,21 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+# https://copier.readthedocs.io/en/stable/updating/#never-change-the-answers-file-manually
+_commit: 3cf05fb
+_src_path: /tmp/hexdummy
+advanced: true
+capitalize_platforms: false
+classname: HexConstruct
+default_branch: main
+description: A Hex Casting addon.
+display_name: HexConstruct
+github_repo: HexConstruct
+github_user: xm1221
+homepage_url: https://github.com/xm1221/HexConstruct
+java_package: cn.xm1221.HexConstruct
+kotlin_package: cn.xm1221.HexConstruct
+mappings_name: Mojmap
+minecraft_version_in_mod_version: false
+mit_license: true
+mod_version: 0.0.1
+modid: hexconstruct
+sources_url: https://github.com/xm1221/HexConstruct

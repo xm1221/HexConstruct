@@ -1,5 +1,5 @@
 # HexConstruct
 
-Multiloader Hex Casting addon for Minecraft 1.19.2, built with Architectury for Fabric and Forge.
+[![powered by hexdoc](https://img.shields.io/endpoint?url=https://hexxy.media/api/v0/badge/hexdoc?label=1)](https://github.com/hexdoc-dev/hexdoc)
 
-Package root: `cn.xm1221.HexConstruct`.
+A Hex Casting addon.

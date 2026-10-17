@@ -1,0 +1,8 @@
+{
+  hexdoc: {
+    hexconstruct: {
+      title: "HexConstruct Book",
+      description: "A Hex Casting addon.",
+    },
+  }
+}
