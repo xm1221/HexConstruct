@@ -1,40 +1,39 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
-#issueTrackerURL = ""
 license = "MIT"
 
 [[mods]]
-modId = "hexdummy"
+modId = "hexconstruct"
 version = "${version}"
-displayName = "Dummy Hex Casting Addon"
+displayName = "HexConstruct"
 logoFile = "icon.png"
-authors = "artynova"
+authors = "xm1221"
 description = '''
-Describe me!
+A Hex Casting addon.
 '''
 
-[[dependencies.hexdummy]]
+[[dependencies.hexconstruct]]
 modId = "forge"
 mandatory = true
 versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.hexconstruct]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.hexconstruct]]
 modId = "architectury"
 mandatory = true
 versionRange = "[6.5.85,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexdummy]]
+[[dependencies.hexconstruct]]
 modId = "hexcasting"
 mandatory = true
 versionRange = "[0.10.3,)"

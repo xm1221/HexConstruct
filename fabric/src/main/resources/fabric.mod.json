@@ -1,30 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "hexdummy",
+  "id": "hexconstruct",
   "version": "${version}",
-  "name": "Dummy Hex Casting Addon",
-  "description": "Please describe me!",
+  "name": "HexConstruct",
+  "description": "A Hex Casting addon.",
   "authors": [
-    "artynova"
+    "xm1221"
   ],
   "contact": {
-    "homepage": "https://artynova.github.io",
-    "sources": "https://github.com/artynova/hexcasting-architectury-addon-template"
+    "sources": "https://github.com/xm1221/HexConstruct"
   },
   "license": "MIT",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.hexdummy.fabric.HexDummyFabric"
+      "cn.xm1221.HexConstruct.fabric.HexConstructFabric"
     ],
     "client": [
-      "net.hexdummy.fabric.HexDummyClientFabric"
+      "cn.xm1221.HexConstruct.fabric.HexConstructClientFabric"
     ]
   },
   "mixins": [
-    "hexdummy-common.mixins.json",
-    "hexdummy.mixins.json"
+    "hexconstruct-common.mixins.json",
+    "hexconstruct.mixins.json"
   ],
   "depends": {
     "minecraft": ">=1.19.2",
