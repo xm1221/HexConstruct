@@ -1,6 +1,17 @@
 name: Release
 
+# PyPI trusted publisher (https://docs.pypi.org/trusted-publishers/):
+#   Project: hexdoc-hexconstruct
+#   Owner: xm1221
+#   Repository: HexConstruct
+#   Workflow: release.yml
+#   Environment: pypi
+# Pushing a v* tag publishes that package with OIDC. No PyPI token is stored in GitHub.
+
 on:
+  push:
+    tags:
+      - "v*"
   workflow_dispatch:
     inputs:
       publish_github:
@@ -34,14 +45,14 @@ jobs:
       contents: write
       pages: read
     with:
-      mod_release: ${{ inputs.publish_curseforge || inputs.publish_modrinth || inputs.publish_github }}
-      hexdoc_release: ${{ inputs.publish_hexdoc }}
-      dry_run: ${{ inputs.dry_run }}
+      mod_release: ${{ github.event_name == 'workflow_dispatch' && (inputs.publish_curseforge || inputs.publish_modrinth || inputs.publish_github) }}
+      hexdoc_release: ${{ github.event_name == 'push' || inputs.publish_hexdoc }}
+      dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
       skip_tests: true
 
   publish-mod:
     needs: build
-    if: inputs.publish_curseforge || inputs.publish_modrinth || inputs.publish_github
+    if: github.event_name == 'workflow_dispatch' && (inputs.publish_curseforge || inputs.publish_modrinth || inputs.publish_github)
     runs-on: ubuntu-latest
     environment:
       name: curseforge-modrinth
@@ -98,7 +109,7 @@ jobs:
 
   publish-pypi:
     needs: build
-    if: inputs.publish_hexdoc && !inputs.dry_run
+    if: github.event_name == 'push' || (inputs.publish_hexdoc && !inputs.dry_run)
     runs-on: ubuntu-latest
     environment:
       name: pypi

@@ -172,7 +172,7 @@ jobs:
       pages: read
     outputs:
       pages-url: ${{ steps.build.outputs.pages-url }}
-      deploy: ${{ github.event_name != 'pull_request' && contains(fromJson(env.HEXDOC_BRANCHES), github.ref_name) && !inputs.dry_run }}
+      deploy: ${{ github.event_name != 'pull_request' && !inputs.dry_run && (inputs.hexdoc_release || contains(fromJson(env.HEXDOC_BRANCHES), github.ref_name)) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -194,6 +194,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release: ${{ inputs.hexdoc_release == true }}
+          site-url: https://xm1221.github.io/HexConstruct
 
   deploy-pages:
     needs:
@@ -224,7 +225,7 @@ jobs:
         uses: hexdoc-dev/actions/merge@v1
         with:
           release: ${{ inputs.hexdoc_release == true }}
-          site-url: ${{ needs.build-hexdoc.outputs.pages-url }}
+          site-url: https://xm1221.github.io/HexConstruct
 
       # if you want to add extra things to your website (eg. Javadoc/Dokka), add it to _site/dst/docs here
 
